@@ -1,4 +1,4 @@
-package com.example.saving_account;
+package com.example.saving.account;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

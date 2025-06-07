@@ -1,4 +1,4 @@
-package com.example.saving_account;
+package com.example.saving.account;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
