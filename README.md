@@ -11,13 +11,11 @@ To build and run the service with MySQL locally using Docker Compose:
   docker compose up --build
 ```
 
-This command starts both a MySQL container and the Spring Boot application.
+This command stop both a MySQL container and the Spring Boot application.
 
 ```bash
   docker compose down -v
 ```
-
-This command stop both a MySQL container and the Spring Boot application.
 
 ## API documentation
 
