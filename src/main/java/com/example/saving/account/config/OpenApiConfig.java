@@ -11,7 +11,7 @@ public class OpenApiConfig {
     public OpenAPI bankingOpenAPI() {
         return new OpenAPI()
                 .info(new Info().title("Banking API")
-                .description("Simple banking service")
-                .version("1.0"));
+                        .description("Simple banking service")
+                        .version("1.0"));
     }
 }
