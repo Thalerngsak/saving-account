@@ -2,22 +2,20 @@ package com.example.saving.account.model;
 
 import jakarta.persistence.*;
 
-/**
- * Represents a system user with credentials and role.
- */
+import java.math.BigDecimal;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "accounts")
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String email;
+    @Version
+    private Long version;
 
-    @Column(nullable = false)
-    private String password;
+    @Column(nullable = false, unique = true, length = 7)
+    private String accountNumber;
 
     @Column(nullable = false, unique = true)
     private String citizenId;
@@ -28,31 +26,23 @@ public class User {
     @Column(nullable = false)
     private String englishName;
 
-    @Column(name = "pin_hash", nullable = false)
-    private String pinHash;
-
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private UserRole role = UserRole.CUSTOMER;
+    private BigDecimal balance = BigDecimal.ZERO;
 
     public Long getId() {
         return id;
     }
 
-    public String getEmail() {
-        return email;
+    public Long getVersion() {
+        return version;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     public String getCitizenId() {
@@ -79,19 +69,11 @@ public class User {
         this.englishName = englishName;
     }
 
-    public String getPinHash() {
-        return pinHash;
+    public BigDecimal getBalance() {
+        return balance;
     }
 
-    public void setPinHash(String pinHash) {
-        this.pinHash = pinHash;
-    }
-
-    public UserRole getRole() {
-        return role;
-    }
-
-    public void setRole(UserRole role) {
-        this.role = role;
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 }
